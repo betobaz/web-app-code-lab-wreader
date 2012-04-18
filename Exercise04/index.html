@@ -36,7 +36,18 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
   <!-- Exercise 4.3 & 4.4 -->
-
+  <header>
+    <script type="text/x-handlebars">
+    {{#view WReader.NavBarView}}
+      <ul>
+        <li><a {{action "showAll" on="click"}}>{{itemCount}} Items</a></li>
+        <li><a {{action "showUnread" on="click"}}>{{unreadCount}} Unread</a></li>
+        <li><a {{action "showStarred" on="click"}}>{{starredCount}} Starred</a></li>
+        <li><a {{action "showRead" on="click"}}>{{readCount}} Read</a></li>
+      </ul>
+    {{/view}}
+    </script>
+  </header>
   <section class="mainContent">
     <section class="summaries">
       <script type="text/x-handlebars">
